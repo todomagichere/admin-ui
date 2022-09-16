@@ -1,6 +1,10 @@
 <div class="ibexa-content-type-edit__field-definitions-group">
     {% set extra_actions = [
-        { 'icon_name': 'discard', 'button_class': 'ibexa-collapse__extra-action-button--remove-field-definitions'}
+        {
+            'icon_name': 'discard',
+            'icon_size_class': 'ibexa-icon--tiny-small',
+            'button_class': 'ibexa-collapse__extra-action-button--remove-field-definitions',
+        }
     ] %}
 
     <div
@@ -37,7 +41,11 @@
                 'header_label': id | ibexa_field_group_name,
                 'is_expanded': true,
                 'extra_actions': [
-                    { 'icon_name': 'discard', 'button_class': 'ibexa-btn--ghost ibexa-collapse__extra-action-button--remove-field-definitions-group'}
+                    {
+                        'icon_name': 'discard',
+                        'icon_size_class': 'ibexa-icon--tiny-small',
+                        'button_class': 'ibexa-btn--ghost ibexa-collapse__extra-action-button--remove-field-definitions-group',
+                    }
                 ],
                 'data_attr': {
                     'data-fields-group-id':  id
