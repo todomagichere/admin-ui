@@ -3,6 +3,7 @@
     const SELECTOR_PICKER_INPUT = '.ibexa-date-time-picker__input';
     const SELECTOR_FORM_INPUT = '.ibexa-picker__form-input';
     const pickers = doc.querySelectorAll(SELECTOR_PICKER);
+    const { shortDate } = ibexa.adminUiConfig.dateFormat;
     const { formatShortDateTime } = ibexa.helpers.timezone;
     const pickerConfig = {
         enableTime: true,
@@ -20,6 +21,11 @@
 
         if (formInput.value) {
             defaultDate = new Date(formInput.value * 1000);
+        }
+
+        if (customConfig.enableTime === false) {
+            pickerConfig.time_24hr = false;
+            pickerConfig.formatDate = (date) => formatShortDateTime(date, null, shortDate);
         }
 
         const dateTimePickerWidget = new ibexa.core.DateTimePicker({
