@@ -11,7 +11,14 @@
         formatDate: (date) => formatShortDateTime(date, null),
     };
     const updateInputValue = (formInput, timestamp) => {
-        formInput.value = timestamp ?? '';
+        const newValue = timestamp[0]?.toString() ?? ''
+        const oldValue = formInput.value;
+
+        formInput.value = newValue;
+
+        if (newValue !== oldValue) {
+            formInput.dispatchEvent(new Event('input'));
+        }
     };
     const initFlatPickr = (field) => {
         const formInput = field.querySelector(SELECTOR_FORM_INPUT);

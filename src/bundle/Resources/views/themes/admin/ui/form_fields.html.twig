@@ -260,7 +260,7 @@
                 'data-flatpickr-config': '{ "enableTime": false }',
             }
         } %}
-        {% set attr = attr|merge({ 'class': 'ibexa-picker__form-input' }) %}
+        {% set attr = attr|merge({ 'class': 'ibexa-picker__form-input ibexa-input--text' }) %}
         {% set type = 'hidden' %}
 
         {{ block('form_widget') }}
